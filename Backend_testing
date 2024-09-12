@@ -1,0 +1,25 @@
+CURL COMMANDS FOR BACKEND LOGIC 
+
+UPDATE: all functionalites working 
+
+Sign up a new user:
+curl -X POST http://localhost:5001/api/auth/signup \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "password": "password123"}'
+
+Login 
+  curl -X POST http://localhost:5001/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "password": "password123"}'
+
+Create an owner:
+  curl -X POST http://localhost:5001/api/owners \
+  -H "Authorization: Bearer <jwt-token>" \
+  -H "Content-Type: application/json" \
+  -d '{"ownerName": "Owner Name", "entityType": "Company", "ownerType": "Competitor", "address": "Owner Address"}' 
+  #entityType, ownerType are both enums 
+
+Delete an owner 
+curl -X DELETE http://localhost:5001/api/owners/<owner-id> \
+  -H "Authorization: Bearer <jwt-token>"
+#owner id is UID from mongodb 
