@@ -18,9 +18,10 @@ app.use(cors({
   
 app.use(express.json());
 
+app.options('*', cors())
 
 app.get('/', (req, res) => {
-  res.redirect('/api/owners');
+  res.send(req.url);
 });
 
 
