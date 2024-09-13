@@ -10,18 +10,21 @@ const app = express();
 
 
 app.use(cors({
-    //origin: 'http://localhost:8080', 
-    origin: 'https://phoenix-capital-group-deployed.onrender.com',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true 
+  origin: 'https://phoenix-capital-group-deployed.onrender.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
   }));
   
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the backend API');
+});
+
 // Routing
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/login', require('./routes/loginRoute'));
+//app.use('/api/login', require('./routes/loginRoute'));
 app.use('/api/owners', require('./routes/owners'));
 app.use('/api/landholdings', require('./routes/landHoldings'));
 
