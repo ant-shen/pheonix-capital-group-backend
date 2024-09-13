@@ -18,9 +18,11 @@ app.use(cors({
   
 app.use(express.json());
 
+/*
 app.get('/', (req, res) => {
   res.send('Welcome to the backend API');
 });
+*/
 
 // Routing
 app.use('/api/auth', require('./routes/auth'));
