@@ -11,7 +11,7 @@ const app = express();
 
 app.use(cors({
     //origin: 'http://localhost:8080', 
-    origin: 'https://phoenix-capital-group-deployed.onrender.com/',
+    origin: 'https://phoenix-capital-group-deployed.onrender.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true 
