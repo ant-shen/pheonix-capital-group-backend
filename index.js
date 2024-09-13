@@ -20,7 +20,7 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-  app.use('/api/owners');
+  res.redirect('/api/owners');
 });
 
 
